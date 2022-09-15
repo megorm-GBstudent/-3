@@ -1,0 +1,74 @@
+#Задание -1
+start_message = input("Введите список чисел (через пробел): ")  
+txt_list = start_message.split()  
+num_list=[] 
+for number in txt_list:     
+    num_list.append(int(number)) 
+ 
+ 
+ 
+result = 0 
+ 
+for i in range(len(num_list)):  
+    if i%2!=0: 
+        result += num_list[i] 
+        
+ 
+print(result)
+
+#Задание 2
+import math 
+ 
+start_message = input("Введите список чисел (через пробел): ")  
+txt_list = start_message.split()  
+num_list=[] 
+for number in txt_list:     
+    num_list.append(int(number)) 
+ 
+ 
+ 
+for i in range(math.ceil(len(num_list)/2)): 
+    print(num_list[i] * num_list[len(num_list) - i - 1]) 
+
+#Задание 3
+import math 
+ 
+start_message = input("Введите список чисел (через пробел): ")  
+txt_list = start_message.split()  
+num_list=[] 
+for number in txt_list:     
+    splitted_num = number.split('.') 
+    if len(splitted_num) > 1: 
+        num_list.append(int(splitted_num[1]) / 10**len(splitted_num[1])) 
+ 
+
+max = 0 
+min = 1 
+ 
+for num in num_list: 
+    num = float(num) 
+    if num > max: 
+        max = num 
+    if num < min: 
+        min = num 
+print(max-min)
+
+#Задание 4
+start_num = int(input("Введите число: "))  
+bin='' 
+while(start_num>0): 
+    bin = str(start_num%2) + bin 
+    start_num = start_num // 2 
+print(bin)
+
+#Задание 5
+start_num = int(input("Введите число: "))  
+aim = start_num-2 
+fib_nums=[-1,1,0,1,1] 
+ 
+for i in range(aim): 
+    fib_nums.insert(0,(fib_nums[1]-fib_nums[0])) 
+ 
+for i in range(aim): 
+    fib_nums.append(fib_nums[-1]+fib_nums[-2]) 
+print(fib_nums)
